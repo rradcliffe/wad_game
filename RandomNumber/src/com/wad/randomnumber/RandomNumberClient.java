@@ -32,7 +32,7 @@ public class RandomNumberClient implements IRandomNumberClient<Integer>
       list = _cache.read(count);
       if (list == null)
       {
-        System.out.println("Retuned list == null");
+        System.out.println("Returned list == null");
       }
     }
     
