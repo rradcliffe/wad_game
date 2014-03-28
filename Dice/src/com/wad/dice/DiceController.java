@@ -48,7 +48,8 @@ public class DiceController
     Dice dice = null;
     
     List<Integer> tempList = _client.getList(count);
-    if (tempList.size() > 0)
+    
+    if ((tempList != null)&&(tempList.size() > 0))
     {
       dice = new Dice();
       
@@ -59,9 +60,9 @@ public class DiceController
 
         dice.add(die);
       }
+      
+      sort(dice);
     }
-    
-    sort(dice);
     
     return dice;
   }

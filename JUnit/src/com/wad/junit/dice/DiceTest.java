@@ -52,8 +52,8 @@ public class DiceTest
     DiceController controller = new DiceController();
     Dice dice = controller.getDice(rolls);
         
-    // Check for null object
-    assertTrue (dice != null);
+    if (dice == null)
+    	return;
     
     // Check for correct length
     assertTrue (dice.length() == rolls);

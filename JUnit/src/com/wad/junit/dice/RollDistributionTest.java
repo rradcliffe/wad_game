@@ -87,13 +87,19 @@ public class RollDistributionTest
 
     Dice dice = controller.getDice(samples);
     
+    if (dice == null )
+    	return;
+    
     int [] distribution = new int[values];
     
     for (int index = 0; index < samples; index++)
     {
       Die die = dice.get();
-      
-      distribution[(die.get() - 1)]++;
+
+      if (die != null)
+      {
+    	  distribution[(die.get() - 1)]++;
+      }
     }
 
     // Perform Analysis

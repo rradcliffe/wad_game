@@ -181,19 +181,25 @@ public class DiceRollProbabilityTest
       Dice diceAttack = controller.getDice(attackDice);
       Dice diceDefend = controller.getDice(defendDice);
       
-      for (int index2 = 0; index2 < fewestDice; index2++)
+      if ((diceAttack != null)&&(diceDefend != null))
       {
-        Die dieAttack = diceAttack.get();
-        Die dieDefend = diceDefend.get();
-        
-        if (dieAttack.get() > dieDefend.get())
-        {
-          attacker++;
-        }
-        else
-        {
-          defender++;
-        }
+	      for (int index2 = 0; index2 < fewestDice; index2++)
+	      {
+	        Die dieAttack = diceAttack.get();
+	        Die dieDefend = diceDefend.get();
+	        
+	        if ((dieAttack != null)&&(dieDefend != null))
+	        {
+		        if (dieAttack.get() > dieDefend.get())
+		        {
+		          attacker++;
+		        }
+		        else
+		        {
+		          defender++;
+		        }
+	         }
+	      }
       }
 
       if (defender == 0)

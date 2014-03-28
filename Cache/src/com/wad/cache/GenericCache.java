@@ -64,6 +64,15 @@ public abstract class GenericCache<T> implements IGenericCache<T>
     }
   }
 
+  
+  // NOTE: this method can return: 
+  
+  // 1) null 
+  // 2) a complete list containing ALL the requested numbers 
+  // 3) an incomplete list that does NOT contain all the requested numbers (incomplete)
+  
+  // the caller needs to be able to handle all three cases
+  
   public List<T> read(int numbersToRetrieve)
   {
 //    final String          methodName  = "read";
@@ -87,7 +96,7 @@ public abstract class GenericCache<T> implements IGenericCache<T>
 
       list = new ArrayList<T>();
 
-      while (list.size() < numbersToRetrieve)
+      while((list.size() < numbersToRetrieve)&&(!_cache.isEmpty()))
       {
         List<T> workList;
         

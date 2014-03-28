@@ -33,6 +33,9 @@ public class Dice
   
   public Die get()
   {
+	if (_list.isEmpty())
+		return null;
+	
     Die result = _list.get(0);
     
     _list.remove(0);
@@ -42,6 +45,9 @@ public class Dice
   
   public List<Die> get(int count)
   {
+	if (_list.isEmpty())
+		return null;
+	
     List<Die> list = null;
     
     if (_list.size() >= count)
