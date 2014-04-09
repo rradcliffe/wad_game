@@ -1,5 +1,5 @@
 
-package com.wad.randomnumber;
+package com.wad.randomnumber.client;
 
 import java.util.List;
 

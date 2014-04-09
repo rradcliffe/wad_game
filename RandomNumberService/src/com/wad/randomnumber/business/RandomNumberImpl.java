@@ -14,7 +14,7 @@ public class RandomNumberImpl
 {
   private boolean initialized = false;
   private SecureRandom sr = null;
-
+ 
   private void _initialize()
   {
     if (!initialized)

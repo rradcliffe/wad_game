@@ -1,0 +1,31 @@
+<systemConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:noNamespaceSchemaLocation="SystemConfiguration.xsd">
+	  
+  <category name="Locks">
+    <param_id name="login">false</param_id>
+	<param_id name="forums">false</param_id>
+  </category>
+  
+  <category name="Logs">
+    <param_id name="directory">C:\Documents and Settings\richard\My Documents\wad\Logs</param_id>
+	<param_id name="error_log_file">ErrorLog.txt</param_id>
+	<param_id name="debug_log_file">DebugLog.txt</param_id>
+  </category>
+  
+  <category name="XMLConfiguration">
+    <param_id name="directory">E:\My Baseline\WaD\Development\data\xml</param_id>
+    <param_id name="accountsFile">wad_accounts_system.xml</param_id>
+	<param_id name="gameOptionsFile">wad_game_options.xml</param_id>
+  </category>
+  
+  <category name="XMLMapData">
+    <param_id name="directory">E:\My Baseline\WaD\Development\data\xml</param_id>
+	<param_id name="mapClassicFile">wad_map_classic.xml</param_id>
+  </category>
+  
+  <category name="Debug">
+    <param_id name="TestString">StringResult</param_id>
+	<param_id name="TestInt">99</param_id>
+	<param_id name="TestBoolean">true</param_id>
+  </category>
+</systemConfiguration>

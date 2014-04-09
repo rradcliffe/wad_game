@@ -1,21 +1,21 @@
 
-package com.wad.randomnumber.serviceclient;
+package com.wad.randomnumber.client;
 
 import java.util.List;
 
 import javax.xml.ws.soap.SOAPFaultException;
 
-import com.wad.randomnumber.serviceclient.IRandomNumberServiceClient;
+import com.wad.randomnumber.client.IRandomNumberClient;
 import com.wad.randomnumber.service.RandomNumber;
 import com.wad.randomnumber.service.RandomNumberService;
 
 
-public class RandomNumberServiceClient implements IRandomNumberServiceClient<Integer>
+public class RandomNumberClient implements IRandomNumberClient<Integer>
 {
   private RandomNumberService _service = null;
   private RandomNumber _port = null;
 
-  public RandomNumberServiceClient()
+  public RandomNumberClient()
   {
     // Initialize Web Service Operation
     _service = new RandomNumberService();

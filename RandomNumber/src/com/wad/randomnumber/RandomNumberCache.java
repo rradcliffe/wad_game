@@ -4,8 +4,8 @@ package com.wad.randomnumber;
 import java.util.List;
 
 import com.wad.cache.GenericCache;
-import com.wad.randomnumber.serviceclient.IRandomNumberServiceClient;
-import com.wad.randomnumber.serviceclient.RandomNumberServiceClient;
+import com.wad.randomnumber.client.IRandomNumberClient;
+import com.wad.randomnumber.client.RandomNumberClient;
 
 //import wad.advisory.Advisory;
 //import wad.advisory.Status;
@@ -22,7 +22,7 @@ public class RandomNumberCache extends GenericCache<Integer>
   private static final int CACHE_SIZE     = 100000;
 
   private static RandomNumberCache _instance = null;
-  private static IRandomNumberServiceClient<Integer> _client = null;
+  private static IRandomNumberClient<Integer> _client = null;
 
   public RandomNumberCache()
   //      throws WadException
@@ -45,7 +45,7 @@ public class RandomNumberCache extends GenericCache<Integer>
   {   
     if (_client == null)
     {     
-      _client = new RandomNumberServiceClient();
+      _client = new RandomNumberClient();
     }
     
     return _client.getList (cachePageSize);

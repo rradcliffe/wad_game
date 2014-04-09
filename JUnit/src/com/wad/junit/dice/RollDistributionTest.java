@@ -9,14 +9,11 @@ import java.util.Formatter;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.wad.dice.Dice;
 import com.wad.dice.DiceController;
 import com.wad.dice.Die;
-
-import static org.junit.Assert.*;
 
 
 public class RollDistributionTest

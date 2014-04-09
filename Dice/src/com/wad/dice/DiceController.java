@@ -13,21 +13,21 @@ public class DiceController
   private int _min     = 1;
   private int _max     = 6;
   private SortType _sortType  = SortType.NONE;
-  private RandomNumberClient _client       = null;
+  private RandomNumber _client       = null;
 
   public enum SortType { NONE, ASCENDING, DESCENDING };
 
   
   public DiceController ()
   {
-    _client = new RandomNumberClient();
+    _client = new RandomNumber();
   }
   
   public DiceController (int max)
   {
     _max = max;
 
-    _client = new RandomNumberClient();
+    _client = new RandomNumber();
   }
 
   public DiceController (int min, int max)
@@ -35,7 +35,7 @@ public class DiceController
     _min = min;
     _max = max;
 
-    _client = new RandomNumberClient();
+    _client = new RandomNumber();
   }
   
   public void setSorting(SortType sortType)

@@ -10,14 +10,14 @@ import java.util.List;
 //import wad.log.AdvisoryLog;
 
 
-public class RandomNumberClient implements IRandomNumberClient<Integer>
+public class RandomNumber implements IRandomNumber<Integer>
 {
   //private static final String  _className  = "RandomNumberCache";
 
   private static RandomNumberCache _cache = null;
   
 
-  public RandomNumberClient()
+  public RandomNumber()
   //      throws WadException
   {   
     _cache = RandomNumberCache.getInstance();

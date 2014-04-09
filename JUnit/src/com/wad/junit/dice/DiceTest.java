@@ -5,19 +5,18 @@
 
 package com.wad.junit.dice;
 
+import static org.junit.Assert.*;
+
 import java.util.List;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.wad.dice.Dice;
 import com.wad.dice.DiceController;
 import com.wad.dice.DiceController.SortType;
 import com.wad.dice.Die;
-
-import static org.junit.Assert.*;
 
 
 public class DiceTest

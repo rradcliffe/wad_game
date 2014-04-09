@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="systemConfiguration" type="configurationtype" />
+  
+  <xs:complexType name="configurationtype">
+    <xs:sequence>
+      <xs:element name="category" maxOccurs="unbounded" type="categorytype"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="categorytype">
+    <xs:sequence>
+      <xs:element name="key" maxOccurs="unbounded" type="keytype"/>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+  
+  <xs:complexType name="keytype">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="name" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+</xs:schema>
