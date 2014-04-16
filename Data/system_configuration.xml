@@ -1,9 +1,9 @@
 <systemConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                       xsi:noNamespaceSchemaLocation="SystemConfiguration.xsd">
 	  
-  <category name="Locks">
-    <param_id name="login">false</param_id>
-	<param_id name="forums">false</param_id>
+  <category name="RandomNumberCache">
+    <param_id name="Pages">5</param_id>
+	<param_id name="PageSize">100000</param_id>
   </category>
   
   <category name="Logs">

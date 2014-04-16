@@ -22,11 +22,50 @@ public abstract class GenericCache<T> implements IGenericCache<T>
 
   private AddCachePagesThread _cachePagesThread = null;
   
-  protected GenericCache(int cachePages, int cachePageSize)
+//  protected GenericCache(int cachePages, int cachePageSize)
 //        throws WadException
-  {
+//  {
 //    final String  methodName  = "CacheGeneric";
 
+//    // Check for invalid cache settings.
+//    if ((cachePages == 0) || (cachePageSize == 0))
+//    {
+////      Advisory      advisory      = new Advisory();
+////      WadException  wadException  = new WadException();
+////
+////      advisory.setPackageName  (ConstantsPackages.CACHE);
+////      advisory.setMethodName   (_className + "::" + methodName);
+////      advisory.setStatus       (Status.STATUS_CACHE_SETTINGS);
+////      advisory.setSupplemental ("Pages " + cachePages + ", Size " + cachePageSize);
+////
+////      AdvisoryLog.log (advisory);
+////
+////      wadException.setAdvisory (advisory);
+////
+////      throw wadException;
+//    }
+//    else
+//    {
+//      _cachePages = cachePages;
+//      _cachePageSize = cachePageSize;
+//
+//      _cache = new ArrayList<List<T>>();
+//      
+//      synchronized(_cache)
+//      {
+//        List<T> list = fill(_cachePageSize);
+//        
+//        _cache.add(list);
+//      }
+//      
+//      // Initialize the remaining pages of the cache. This will be done in
+//      // a separate thread.
+//      _addPages(_cachePages - 1);
+//    }
+//  }
+
+  public void setCacheParams(int cachePages, int cachePageSize)
+  {
     // Check for invalid cache settings.
     if ((cachePages == 0) || (cachePageSize == 0))
     {
@@ -50,20 +89,19 @@ public abstract class GenericCache<T> implements IGenericCache<T>
       _cachePageSize = cachePageSize;
 
       _cache = new ArrayList<List<T>>();
-      
+    
       synchronized(_cache)
       {
         List<T> list = fill(_cachePageSize);
-        
+      
         _cache.add(list);
       }
-      
+    
       // Initialize the remaining pages of the cache. This will be done in
       // a separate thread.
       _addPages(_cachePages - 1);
     }
   }
-
   
   // NOTE: this method can return: 
   

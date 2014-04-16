@@ -13,7 +13,8 @@ public class SystemConfigurationImpl
 {
   //private static final String  _className  = "Configuration";
 
-  private final String _filepath = "E:\\My Baseline\\Eclipse\\Data\\system_configuration.xml";
+  //TODO: Need to use environment variable for Data directory.
+  private final String _filepath = "E:\\My Baseline\\GitHub.Repository\\wad_game\\Data\\system_configuration.xml";
 
   private HashMap<String, HashMap<String, String>> _categoryMap = null;
 

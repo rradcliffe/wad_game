@@ -6,6 +6,7 @@ import java.util.List;
 import com.wad.cache.GenericCache;
 import com.wad.randomnumber.client.IRandomNumberClient;
 import com.wad.randomnumber.client.RandomNumberClient;
+import com.wad.systemconfiguration.client.SystemConfigurationClient;
 
 //import wad.advisory.Advisory;
 //import wad.advisory.Status;
@@ -18,16 +19,21 @@ public class RandomNumberCache extends GenericCache<Integer>
 {
   //private static final String  _className  = "RandomNumberCache";
 
-  private static final int CACHE_PAGES    = 5;
-  private static final int CACHE_SIZE     = 100000;
+  private int CACHE_PAGES = 5;
+  private int CACHE_PAGE_SIZE = 100000;
 
   private static RandomNumberCache _instance = null;
   private static IRandomNumberClient<Integer> _client = null;
 
   public RandomNumberCache()
   //      throws WadException
-  {
-    super (CACHE_PAGES, CACHE_SIZE);
+  {   
+    SystemConfigurationClient configClient = new SystemConfigurationClient();
+
+    CACHE_PAGES = configClient.getInt("RandomNumberCache", "Pages");
+    CACHE_PAGE_SIZE = configClient.getInt("RandomNumberCache", "PageSize");
+    
+    setCacheParams(CACHE_PAGES, CACHE_PAGE_SIZE);
   }
 
   public static synchronized RandomNumberCache getInstance()
